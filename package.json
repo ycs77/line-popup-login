@@ -1,0 +1,43 @@
+{
+  "name": "line-popup-login",
+  "type": "module",
+  "version": "0.1.0",
+  "description": "This package is an unofficial LINE Popup Login SDK for JavaScript.",
+  "license": "MIT",
+  "homepage": "https://github.com/ycs77/line-popup-login",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ycs77/line-popup-login.git",
+    "directory": "packages/vue"
+  },
+  "keywords": [
+    "LINE",
+    "login",
+    "oauth2"
+  ],
+  "sideEffects": false,
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsup src/index.ts",
+    "lint": "eslint .",
+    "prepack": "npm run build"
+  },
+  "devDependencies": {
+    "@ycs77/eslint-config": "^2.1.0",
+    "eslint": "^8.56.0",
+    "tsup": "^8.0.1",
+    "typescript": "^5.3.3"
+  }
+}
