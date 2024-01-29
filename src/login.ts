@@ -1,23 +1,59 @@
 import type { LINEAuthErrorResponse, LINEAuthResponse } from './types'
 
-export function lineAuthLogin(options: {
+export interface LINEAuthLoginOptions {
   channelId: string
   state: string
   redirectUrl?: string
   scope?: string
+  nonce?: string
+  consent?: boolean
+  maxAge?: number
+  uiLocales?: string
+  botPrompt?: 'normal' | 'aggressive'
+  initialAmrDisplay?: string
+  switchAmr?: boolean
+  disableAutoLogin?: boolean
+  disableIosAutoLogin?: boolean
+  codeChallenge?: string
+  codeChallengeMethod?: string
   error?: (response: LINEAuthErrorResponse) => void
-}) {
+}
+
+export function lineAuthLogin(options: LINEAuthLoginOptions) {
   return new Promise<LINEAuthResponse>((resolve, reject) => {
     const {
       channelId,
       state,
       redirectUrl = location.origin,
       scope = 'openid profile',
+      nonce,
+      consent,
+      maxAge,
+      uiLocales,
+      botPrompt,
+      initialAmrDisplay,
+      switchAmr,
+      disableAutoLogin,
+      disableIosAutoLogin,
+      codeChallenge,
+      codeChallengeMethod,
     } = options
 
     let result = null as (LINEAuthResponse & LINEAuthErrorResponse) | null
 
-    const url = `https://access.line.me/oauth2/v2.1/authorize?response_type=code&&client_id=${channelId}&redirect_uri=${encodeURIComponent(redirectUrl)}&state=${state}&scope=${encodeURIComponent(scope)}`
+    let url = `https://access.line.me/oauth2/v2.1/authorize?response_type=code&&client_id=${channelId}&redirect_uri=${encodeURIComponent(redirectUrl)}&state=${state}&scope=${encodeURIComponent(scope)}`
+
+    if (nonce) url += `&nonce=${nonce}`
+    if (consent) url += `&prompt=consent`
+    if (maxAge) url += `&max_age=${maxAge}`
+    if (uiLocales) url += `&ui_locales=${uiLocales}`
+    if (botPrompt) url += `&bot_prompt=${botPrompt}`
+    if (initialAmrDisplay) url += `&initial_amr_display=${initialAmrDisplay}`
+    if (switchAmr) url += `&switch_amr=${switchAmr ? 'true' : 'false'}`
+    if (disableAutoLogin) url += `&disable_auto_login=${disableAutoLogin ? 'true' : 'false'}`
+    if (disableIosAutoLogin) url += `&disable_ios_auto_login=${disableIosAutoLogin ? 'true' : 'false'}`
+    if (codeChallenge) url += `&code_challenge=${codeChallenge}`
+    if (codeChallengeMethod) url += `&code_challenge_method=${codeChallengeMethod}`
 
     const width = Math.min(500, window.screen.width - 40)
     const height = Math.min(550, window.screen.height - 40)
