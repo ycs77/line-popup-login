@@ -15,7 +15,7 @@ npm i inertia-plugin
 yarn add inertia-plugin
 ```
 
-Then add the callback page `line-callback.html` into the project root:
+Then add the callback page `line-callback.html` into the `public` folder (static assets folder):
 
 ```html
 <!DOCTYPE html>
