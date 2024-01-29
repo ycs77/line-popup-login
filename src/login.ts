@@ -58,7 +58,7 @@ export function lineAuthLogin(options: {
             reject(new Error('Login failed'))
           }
         } else {
-          reject(new Error('Missing result'))
+          reject(new Error('Popup window closed'))
         }
       }
     }, 500)
