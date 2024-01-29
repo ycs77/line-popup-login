@@ -1,11 +1,9 @@
-# LINE Popup Login SDK for JavaScript
+# LINE Login with Popup Modal package for JavaScript
 
 [![NPM version][ico-version]][link-npm]
 [![Software License][ico-license]](LICENSE)
 [![GitHub Tests Action Status][ico-github-action]][link-github-action]
 [![Total Downloads][ico-downloads]][link-downloads]
-
-This package is an unofficial LINE login with popup modal for JavaScript.
 
 ## Installation
 

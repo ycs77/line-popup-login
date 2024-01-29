@@ -2,7 +2,7 @@
   "name": "line-popup-login",
   "type": "module",
   "version": "0.1.0",
-  "description": "This package is an unofficial LINE Popup Login SDK for JavaScript.",
+  "description": "LINE Login with Popup Modal package for JavaScript",
   "license": "MIT",
   "homepage": "https://github.com/ycs77/line-popup-login",
   "repository": {
