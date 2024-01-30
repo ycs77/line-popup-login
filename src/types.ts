@@ -4,6 +4,7 @@ export interface LINEAuthResponse {
   friendship_status_changed?: boolean
   liffClientId?: string
   liffRedirectUri?: string
+  lineAppVersion?: string
 }
 
 export interface LINEAuthErrorResponse {
