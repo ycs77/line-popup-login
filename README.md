@@ -1,4 +1,4 @@
-# LINE Login with Popup Modal package for JavaScript
+# LINE Login with Popup Modal
 
 [![NPM version][ico-version]][link-npm]
 [![Software License][ico-license]](LICENSE)
