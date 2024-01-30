@@ -5,6 +5,8 @@
 [![GitHub Tests Action Status][ico-github-action]][link-github-action]
 [![Total Downloads][ico-downloads]][link-downloads]
 
+> This package status is experimental, it works on Windows 11 desktops but can't work on mobile, please don't use it for production.
+
 ## Installation
 
 Install the package:
