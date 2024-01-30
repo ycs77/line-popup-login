@@ -51,9 +51,10 @@ Call `lineAuthLogin()` when you want to log in with LINE:
 
 ```js
 lineAuthLogin({
-  channelId: YOUR_LINE_CHANNEL_ID,
+  client_id: YOUR_LINE_CHANNEL_ID,
+  scope: 'profile openid',
   state: SET_RANDOM_TEXT,
-  redirectUrl: `${location.origin}/line-callback.html`,
+  redirect_uri: `${location.origin}/line-callback.html`,
 }).then(res => {
   console.log('Handle the LINE response', res)
 }).catch(error => {
