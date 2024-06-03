@@ -4,6 +4,7 @@
 [![Software License][ico-license]](LICENSE)
 [![Total Downloads][ico-downloads]][link-downloads]
 
+> [!WARNING]
 > This package status is experimental, it works on Windows 11 desktops but can't work on mobile, please don't use it for production.
 
 ## Installation
